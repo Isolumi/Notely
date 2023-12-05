@@ -12,17 +12,20 @@ interface GenerateStudySheetDataAccessInterface {
 'interactors
 class EnhanceNoteInteractor
 EnhanceNoteInteractor -> EnhanceNoteDataAccessInterface
+EnhanceNoteInteractor -> GenerateNoteEnhanceQuery
 
 class GenerateStudySheetInteractor
 GenerateStudySheetInteractor -> GenerateStudySheetDataAccessInterface
 
 'entities
-class EnhanceNote
+class GenerateNoteEnhanceQuery
 
 'data access objects
-class OpenAIDataAccessObject implements EnhanceNoteDataAccessInterface, GenerateStudySheetDataAccessInterface
+class OpenAIDataAccessObject extends EnhanceNoteDataAccessInterface, GenerateStudySheetDataAccessInterface
 
-
+class test1
+class test2
+test1 -> OpenAIDataAccessObject
 
 
 @enduml
