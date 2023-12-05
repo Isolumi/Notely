@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'use case interfaces
+interface EnhanceNoteDataAccessInterface {
+    +enhanceNote(): str
+}
+interface GenerateStudySheetDataAccessInterface {
+    +generateStudySheet(): str
+}
+
+'interactors
+class EnhanceNoteInteractor
+EnhanceNoteInteractor -> EnhanceNoteDataAccessInterface
+
+class GenerateStudySheetInteractor
+GenerateStudySheetInteractor -> GenerateStudySheetDataAccessInterface
+
+'entities
+class EnhanceNote
+
+'data access objects
+class OpenAIDataAccessObject implements EnhanceNoteDataAccessInterface, GenerateStudySheetDataAccessInterface
+
+
+
+
+@enduml
